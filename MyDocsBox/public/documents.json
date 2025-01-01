@@ -1,0 +1,20 @@
+[
+    {
+        "name":"aadhaar card",
+        "isUpload":false
+    }
+    ,{
+        "name":"pan card",
+        "isUpload":false
+    },{
+        "name":"voting card",
+        "isUpload":false
+    },{
+        "name":"driving licence",
+        "isUpload":false
+    }
+    ,{
+        "name":"credit card",
+        "isUpload":false
+    }
+]

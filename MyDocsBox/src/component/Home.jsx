@@ -4,7 +4,7 @@ import { Navbar } from "./Navbar";
 import {
   adhar, pan, vote, driving, atm, x, dimploma, bachelor, master, template
 } from "../assets/imagePath";
-import { URL } from "../assets/config";
+import { URLPath } from "../assets/config";
 
 export const Home = () => {
   const [documentTypes, setDocumentTypes] = useState([]);
@@ -25,7 +25,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchDocumentTypes = async () => {
       try {
-        const response = await fetch(`${URL}/documents`);
+        const response = await fetch(`${URLPath}/documents`);
         const result = await response.json();
 
         if (response.ok) {

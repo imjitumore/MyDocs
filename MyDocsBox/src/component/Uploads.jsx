@@ -3,7 +3,7 @@ import { Navbar } from "./Navbar";
 import fileup from "/file.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { URL } from "../assets/config";
+import { URLPath } from "../assets/config";
 
 export const Uploads = () => {
   const [files, setFiles] = useState([]);
@@ -24,7 +24,7 @@ export const Uploads = () => {
       }
 
       try {
-        const response = await axios.get(`${URL}/uploads/${userEmail}`);
+        const response = await axios.get(`${URLPath}/uploads/${userEmail}`);
         const uploadedDocsFromServer = response.data.uploadedDocs || [];
         uploadedDocsFromServer.forEach((doc) => updateUploadStatus(doc, true));
       } catch (error) {
@@ -83,14 +83,14 @@ export const Uploads = () => {
 
       // Upload the files
       const response = await axios.post(
-        `${URL}/uploads/${userEmail}`,
+        `${URLPath}/uploads/${userEmail}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
       console.log(response)
 
       alert("Upload successful!");
-      await axios.put(`${URL}/documents/${documentType}`, {
+      await axios.put(`${URLPath}/documents/${documentType}`, {
         isUpload: true,
       });
 

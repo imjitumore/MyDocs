@@ -14,7 +14,7 @@ import {
   master,
   template,
 } from "../assets/imagePath";
-import { URL } from "../assets/config";
+import { URLPath } from "../assets/config";
 
 export const DocumentDetails = () => {
   const [documentUrl, setDocumentUrl] = useState(null);
@@ -31,7 +31,7 @@ export const DocumentDetails = () => {
     const fetchDocument = async () => {
       try {
         const response = await axios.get(
-          `${URL}/uploads/${userEmail}/${documentType}`,
+          `${URLPath}/uploads/${userEmail}/${documentType}`,
           { responseType: "blob" }
         );
 

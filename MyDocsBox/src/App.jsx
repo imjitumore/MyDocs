@@ -6,6 +6,7 @@ import { SignUp } from "./component/SignUp";
 import { DashBoard } from "./component/DashBoard";
 import { Uploads } from "./component/Uploads";
 import { useState, useEffect } from "react";
+import { DocumentDetails } from "./component/DocumentDetails";
 
 function App() {
   const [data, setData] = useState([]);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/document" element={<DocumentDetails/>} />
         <Route path="/uploads" element={<Uploads data={data} />} />
       </Routes>
     </BrowserRouter>

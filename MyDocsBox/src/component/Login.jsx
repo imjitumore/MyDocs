@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { URL } from "../assets/config";
 export const Login = ({setUser}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate()
   async function login(){
     try {
-      const response = await fetch("http://localhost:5400/api/login",{
+      const response = await fetch(`${URL}/login`,{
         method:"POST",
         headers:{"Content-type":"application/json"},
         body:JSON.stringify({email,password})
